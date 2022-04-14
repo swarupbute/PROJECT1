@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn install
+      - mv target/ROOT-1.war ROOT.war
+
+artifacts:
+  files:
+    - '**/ROOT.war'
+  discard-paths: yes
